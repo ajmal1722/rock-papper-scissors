@@ -4,3 +4,4 @@ function greetings(){
 function displayname(name){
     document.write('Good Morning ' + name)
 }
+
