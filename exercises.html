@@ -34,6 +34,31 @@
         cost = cost*0.1 + cost; //tax is 10%. so multiply it with 0.1 
         console.log(`cost of food after tax included is : ${cost}`);
 
+        //chapter 6. Booleans and if statements
+
+        //6a.
+        const hour = 19;
+        if (hour >=6 && hour <= 12){
+            console.log('Good Morning!');
+        }else if (hour >= 13 && hour <= 17){
+            console.log ('Good Afternoon!');
+        }else{
+            console.log('Good Night!');
+        }
+
+        //6c.
+        // const name = 'Muhammed Ajmal';
+        // name is already declared in 5th exercise. 
+        // so I'm just commenting my declaration and reusing the previous variable value
+        if (hour >=6 && hour <= 12){
+            result = 'Good Morning!';
+        }else if (hour >= 13 && hour <= 17){
+            result = 'Good Afternoon!';
+        }else{
+            result = 'Good Night!';
+        }
+        console.log(result + ' '+ name)
+
 
     </script>
 </body>
