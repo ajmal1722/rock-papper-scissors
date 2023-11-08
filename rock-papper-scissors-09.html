@@ -14,6 +14,8 @@
 
     <button onclick="playGame('Scissor')">Scissor</button>
 
+    <p class="js-move"></p>
+    <p class="js-result"></p>
     <p class="js-scoreUpdates"></p>
 
     <button onclick="
@@ -94,10 +96,12 @@
 
                 updateScore();
 
-                
+                document.querySelector('.js-move').innerHTML = `${result} !`
+                document.querySelector('.js-result').innerHTML = 
+                `you ${playerMove}- Computer ${computerMove}`
 
-                alert(`you picked ${playerMove}. computer picked ${computerMove}. ${result}
-wins : ${score.wins}, Losses : ${score.losses}, Ties : ${score.ties}`);
+//                 alert(`you picked ${playerMove}. computer picked ${computerMove}. ${result}
+// wins : ${score.wins}, Losses : ${score.losses}, Ties : ${score.ties}`);
             
             return computerMove;
             }
