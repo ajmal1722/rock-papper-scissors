@@ -14,24 +14,30 @@
 
     <button onclick="playGame('Scissor')">Scissor</button>
 
-    <p class="scoreUpdates"></p>
+    <p class="js-scoreUpdates"></p>
 
     <button onclick="
          score.wins = 0;
         score.losses = 0;
         score.ties = 0;
+        updateScore();
     " >Reset Scores</button>
 
 
     <script>
 
-
-        const score = {
+         const score = {
             wins : 0,
             losses : 0,
             ties : 0
         };
 
+        function updateScore(){
+            document.querySelector('.js-scoreUpdates').innerHTML = 
+        `wins : ${score.wins}, Losses : ${score.losses}, Ties : ${score.ties}`
+        }
+
+        updateScore();
 
         function playGame(playerMove){
             const computerMove = pickComputerMove(); 
@@ -85,6 +91,8 @@
                 }else {
                     score.ties += 1;
                 }
+
+                updateScore();
 
                 
 
