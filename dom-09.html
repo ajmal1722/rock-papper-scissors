@@ -8,8 +8,21 @@
 <body>
     <p>YouTube Subscribe Button</p>
     <button class="js-subscribe-button" onclick="subscribeButton ()">Subscribe</button>
+    
+    
     <p>Rock Papper Scissors</p>
 
+    <a href="rock-papper-scissors-09.html">click here</a>
+
+    <p>Amazone Shipping Calculator</p>
+
+    <p>Orders Under $40 = +$10 Shipping</p>
+    <p>Orders over $40 = FREE Shipping</p>
+
+    <input type="number" placeholder="cost of order" >
+    <button onclick="showCost()" class="js-calculate-btn">Calculate</button>
+
+    <p class="js-display"></p>
 
     <script>
         function subscribeButton (){
@@ -20,6 +33,18 @@
                 buttonElement.innerHTML = 'subscribe';
             }
         }
+
+
+        function showCost (){
+            const costElement = document.querySelector('input').value;
+            
+            if (costElement < 40){
+                document.querySelector('.js-display').innerHTML = 
+                `Total Amount is $${costElement} + 10`;
+            }
+        }
+
+
     </script>
 </body>
 </html>
