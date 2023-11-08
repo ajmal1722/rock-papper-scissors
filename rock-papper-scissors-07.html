@@ -40,6 +40,22 @@
                     }else if (computerMove === 'Scissor'){
                         result = 'you won.'
                     }      
+                }else if (playerMove === 'Papper') {
+                    if (computerMove === 'rock'){
+                        result = 'you won.';
+                    }else if (computerMove === 'Papper'){
+                        result = 'tie'
+                    }else if (computerMove === 'Scissor'){
+                        result = 'you lose.'
+                    } 
+                }else{
+                    if (computerMove === 'rock'){
+                        result = 'you lose.';
+                    }else if (computerMove === 'Papper'){
+                        result = 'you won.'
+                    }else if (computerMove === 'Scissor'){
+                        result = 'tie'
+                    } 
                 }
                 alert(`you picked ${playerMove}. computer picked ${computerMove}. ${result} `)
             
