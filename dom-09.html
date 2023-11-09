@@ -4,6 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM project for Practice</title>
+    <style>
+        .js-subscribe-button{
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-weight: 500;
+            background: black;
+            padding: 10px;
+            margin-bottom: 50px;
+            cursor: pointer;
+        }
+        .is-subscribed{
+            background: whitesmoke;
+            color: black;
+            font-weight: bolder;
+        }
+        input{
+            padding: 5px;
+        }
+        .text{
+            margin-top: 50px;
+        }
+        .js-calculate-btn{
+            background: green;
+            border: none;
+            padding: 6px 10px;
+            margin-left: 5px;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .js-display{
+            color: red;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <p>YouTube Subscribe Button</p>
@@ -14,7 +51,7 @@
 
     <a href="rock-papper-scissors-09.html">click here</a>
 
-    <p>Amazone Shipping Calculator</p>
+    <p class="text" >Amazone Shipping Calculator</p>
 
     <p>Orders Under $40 = +$10 Shipping</p>
     <p>Orders over $40 = FREE Shipping</p>
@@ -36,8 +73,10 @@
             const buttonElement = document.querySelector('.js-subscribe-button');
             if (buttonElement.innerHTML === 'Subscribe'){
                 buttonElement.innerHTML = 'Subscribed';
+                buttonElement.classList.add('is-subscribed');
             }else {
                 buttonElement.innerHTML = 'subscribe';
+                buttonElement.classList.remove('is-subscribed');
             }
         }
 
