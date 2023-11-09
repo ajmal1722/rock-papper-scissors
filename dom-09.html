@@ -19,12 +19,19 @@
     <p>Orders Under $40 = +$10 Shipping</p>
     <p>Orders over $40 = FREE Shipping</p>
 
-    <input type="number" placeholder="cost of order" >
+    <input type="number" placeholder="cost of order" onkeydown="pressEnter()" >
     <button onclick="showCost()" class="js-calculate-btn">Calculate</button>
 
     <p class="js-display"></p>
 
     <script>
+        function pressEnter(){
+            // const inputValue = document.querySelector('input');
+            if (event.key === 'Enter'){
+                showCost();
+            }
+        }
+
         function subscribeButton (){
             const buttonElement = document.querySelector('.js-subscribe-button');
             if (buttonElement.innerHTML === 'Subscribe'){
@@ -36,14 +43,18 @@
 
 
         function showCost (){
-            const costElement = document.querySelector('input').value;
+            let costElement = Number(document.querySelector('input').value);
             
             if (costElement < 40){
+                costElement = costElement + 10;
                 document.querySelector('.js-display').innerHTML = 
-                `Total Amount is $${costElement} + 10`;
+                `Total Amount is $${costElement}`;
+            }else {
+                document.querySelector('.js-display').innerHTML = 
+                `Total Amount is $${costElement}`;
             }
         }
-
+        
 
     </script>
 </body>
