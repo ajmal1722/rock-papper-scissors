@@ -10,7 +10,7 @@ renderTodoList();
             todoListHTML += html;
         }
     
-        document.querySelector('.js-todo-list').innerHTML = todoList;
+        document.querySelector('.js-todo-list').innerHTML = todoListHTML;
     }
 
 function addTodo (){
