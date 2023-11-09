@@ -51,11 +51,11 @@
         <img src="images/rock-emoji.png" alt="">
      </button>
         
-    <button class="move-button" onclick="playGame('Papper')">
+    <button class="move-button" onclick="playGame('Paper')">
         <img src="images/paper-emoji.png" alt="">
     </button>
 
-    <button class="move-button" onclick="playGame('Scissor')">
+    <button class="move-button" onclick="playGame('Scissors')">
         <img src="images/scissors-emoji.png" alt="">
     </button>
 
@@ -96,36 +96,36 @@
                 if (randomNumber >= 0 && randomNumber < 1/3){
                     computerMove ='rock';
                 }else if (randomNumber >= 1/3 && randomNumber < 2/3){
-                    computerMove = 'Papper';
+                    computerMove = 'Paper';
                 }else{
-                    computerMove = 'Scissor';
+                    computerMove = 'Scissors';
                 }
                 
                 let result;
                 if (playerMove === 'rock'){
                     if (computerMove === 'rock'){
                         result = 'tie';
-                    }else if (computerMove === 'Papper'){
+                    }else if (computerMove === 'Paper'){
                         result = 'you lose.'
-                    }else if (computerMove === 'Scissor'){
+                    }else if (computerMove === 'Scissors'){
                         result = 'you won.'
                     }  
 
-                }else if (playerMove === 'Papper') {
+                }else if (playerMove === 'Paper') {
                     if (computerMove === 'rock'){
                         result = 'you won.';
-                    }else if (computerMove === 'Papper'){
+                    }else if (computerMove === 'Paper'){
                         result = 'tie'
-                    }else if (computerMove === 'Scissor'){
+                    }else if (computerMove === 'Scissors'){
                         result = 'you lose.'
                     } 
                     
                 }else{
                     if (computerMove === 'rock'){
                         result = 'you lose.';
-                    }else if (computerMove === 'Papper'){
+                    }else if (computerMove === 'Paper'){
                         result = 'you won.'
-                    }else if (computerMove === 'Scissor'){
+                    }else if (computerMove === 'Scissors'){
                         result = 'tie'
                     } 
                 }
