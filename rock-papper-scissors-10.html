@@ -4,28 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <style>
+        body{
+            background: rgb(25, 25, 25);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .title{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .move-button{
+            background-color: transparent;
+            border: 3px solid white;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        img{
+            height: 50px;
+        }
+        .js-move{
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+        .js-scoreUpdates{
+            margin-top: 60px;
+        }
+        .reset-score{
+           background-color: white;
+           border: none;
+           font-size: 15px; 
+           padding: 8px 15px;
+           cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <p>Rock Paper Scissors</p>
+    <p class="title" >Rock Paper Scissors</p>
 
-    <button onclick="playGame('rock')">Rock </button>
+    <button class="move-button" onclick="playGame('rock')">
+        <img src="images/rock-emoji.png" alt="">
+     </button>
         
-    <button onclick="playGame('Papper')">Papper</button>
+    <button class="move-button" onclick="playGame('Papper')">
+        <img src="images/paper-emoji.png" alt="">
+    </button>
 
-    <button onclick="playGame('Scissor')">Scissor</button>
+    <button class="move-button" onclick="playGame('Scissor')">
+        <img src="images/scissors-emoji.png" alt="">
+    </button>
 
     <p class="js-move"></p>
     <p class="js-result"></p>
     <p class="js-scoreUpdates"></p>
 
-    <button onclick="
+    <button class="reset-score" onclick="
          score.wins = 0;
         score.losses = 0;
         score.ties = 0;
         updateScore();
     " >Reset Scores</button>
 
-
+    
     <script>
 
          const score = {
@@ -98,7 +143,7 @@
 
                 document.querySelector('.js-move').innerHTML = `${result} !`
                 document.querySelector('.js-result').innerHTML = 
-                `you ${playerMove}- Computer ${computerMove}`
+                `you <img src="images/${playerMove}-emoji.png" alt=""> - <img src="images/${computerMove}-emoji.png" alt=""> Computer `
 
 //                 alert(`you picked ${playerMove}. computer picked ${computerMove}. ${result}
 // wins : ${score.wins}, Losses : ${score.losses}, Ties : ${score.ties}`);
