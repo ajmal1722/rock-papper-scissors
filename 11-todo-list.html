@@ -4,13 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chapter 11</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .js-todo-list,
+        .input-grid{
+            display: grid;
+            grid-template-columns: 200px 150px 80px;
+            gap: 10px;
+        }
+        .delete-button{
+            width: 80px;
+            background-color: brown;
+            color: white;
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+        .js-todo-list{
+            margin-top: 15px;
+        }
+        .input-button{
+            background-color: green;
+            color: white;
+            padding: 8px;
+            font-weight: 700;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
     <p>Todo List</p>
-    <input class="js-name-input" type="text" placeholder="Todo name">
-    <input type="date" class="js-due-date-input">
-    <button onclick="addTodo();" >Add</button>
-
+    <div class="input-grid">
+        <input class="js-name-input" type="text" placeholder="Todo name">
+        <input type="date" class="js-due-date-input">
+        <button class="input-button" onclick="addTodo();" >Add</button>
+    </div>
     <div class="js-todo-list"></div>
 
     <script src="11-todo-list.js"></script>
