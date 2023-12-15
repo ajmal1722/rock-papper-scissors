@@ -86,9 +86,23 @@
 
 const express = require('express');
 const ajmal = express();
+const fs = require('fs')
+
+const html = fs.readFileSync('index.html', 'utf-8')
+
 const PORT = 8000;
 
 ajmal.get('/', (req, res) => {
-    res.end('hello, it is  express')
+    res.send(html)
 })
 ajmal.listen(PORT)
+
+
+// const http = require('http');
+// const PORT = 8000;
+
+// const server = http.createServer((req, res) => {
+//     res.end('hello node.js')
+// });
+
+// server.listen(8080);
