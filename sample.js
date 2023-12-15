@@ -63,8 +63,18 @@
 // } else {
 //     emailError.style.display = "none";
 // }
+y();
+ function y () {
+    console.log('I am y')
+}
+ function y () {
+    console.log(' am y')
+}
+function y () {
+    console.log('hello y');
+}
 
-
-
+console.log(2+4+4+'5'+3)
+console.log(('2'+'4'*4))
 
 
