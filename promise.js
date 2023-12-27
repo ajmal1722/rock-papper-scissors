@@ -32,7 +32,7 @@ add(10, 20).then(sum => {
 .catch(err => console.log(err));
 
 
-// promise all
+/********************** */
 function getName() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -48,6 +48,16 @@ function getMobile() {
     });
 }
 
+// promise all
 promise.all([getName(), getMobile()]).then((res) =>{
     console.log(res);
-})
+});
+
+// async await
+async function getUser() {
+    const name = await getName();
+    console.log(name);
+    const mobile = await getMobile();
+    console.log(mobile);
+}
+getUser();
