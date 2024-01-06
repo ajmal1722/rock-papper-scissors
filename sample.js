@@ -129,6 +129,12 @@ console.log('drinks :', person.eateries[0].drinks[1]);
 console.log('snacks which is soft:', person.eateries[0].snacks[0].soft);
 console.log('favourite western snacks:', person.eateries[0].snacks[1].western[1]);
 
+//changing the values
+person.eateries[0].snacks[1].western[1] = 'Sandwich';
+console.log('edited western snacks:', person.eateries[0].snacks[1].western);
+person.eateries[0].drinks[2] = 'Horlicks';
+console.log('edited drinks:', person.eateries[0].drinks)
+
 
 // const values = person.eateries.hobbies[2];
 
