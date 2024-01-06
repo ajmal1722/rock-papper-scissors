@@ -105,3 +105,38 @@ ajmal.listen(PORT)
 // });
 
 // server.listen(8080);
+
+
+const person = {
+    name: 'Salman',
+    age: 22,
+    hobbies: ['playing', 'reading'],
+    eateries: [ {
+        drinks: ['water', 'juice', 'boost'],
+        snacks: [{
+            soft: 'samosa',
+            hard: 'pathiri'
+        },{
+            western: ['pizza', 'burger']
+        }]
+    } ]
+}
+
+console.log('name:', person.name);
+console.log('hobbies:', person.hobbies);
+console.log(person.eateries[0]);
+console.log('drinks :', person.eateries[0].drinks[1]);
+console.log('snacks which is soft:', person.eateries[0].snacks[0].soft);
+console.log('favourite western snacks:', person.eateries[0].snacks[1].western[1]);
+
+
+// const values = person.eateries.hobbies[2];
+
+// console.log(values)
+
+// let x = parseInt('134 ajmal4')
+// console.log(x)
+
+// let b = 4
+// b = !b;
+// console.log(b)
