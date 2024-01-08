@@ -83,7 +83,6 @@
 // console.log(2+4+4+'5'+3)
 // console.log(('2'+'4'*4));
 
-
 const express = require('express');
 const ajmal = express();
 const fs = require('fs')
@@ -106,3 +105,111 @@ ajmal.listen(PORT)
 // });
 
 // server.listen(8080);
+
+
+const person = {
+    name: 'Salman',
+    age: 22,
+    hobbies: ['playing', 'reading'],
+    eateries: [ {
+        drinks: ['water', 'juice', 'boost'],
+        snacks: [{
+            soft: 'samosa',
+            hard: 'pathiri'
+        },{
+            western: ['pizza', 'burger']
+        }]
+    } ]
+}
+
+// console.log('name:', person.name);
+// console.log('hobbies:', person.hobbies);
+// console.log(person.eateries[0]);
+// console.log('drinks :', person.eateries[0].drinks[1]);
+// console.log('snacks which is soft:', person.eateries[0].snacks[0].soft);
+// console.log('favourite western snacks:', person.eateries[0].snacks[1].western[1]);
+
+//changing the values
+// person.eateries[0].snacks[1].western[1] = 'Sandwich';
+// console.log('edited western snacks:', person.eateries[0].snacks[1].western);
+// person.eateries[0].drinks[2] = 'Horlicks';
+// console.log('edited drinks:', person.eateries[0].drinks);
+
+//for in loop
+for (const key in person) {
+    // console.log(key)
+    console.log(person[key])
+}
+
+
+// const values = person.eateries.hobbies[2];
+
+// console.log(values)
+
+// let x = parseInt('134 ajmal4')
+// console.log(x)
+
+// let b = 4
+// b = !b;
+// console.log(b)
+
+const array = [2, 4, 5, 1, 6, 9, 8]
+
+// forEach
+array.forEach(x => x * 10)
+
+// map
+const map = array.map(x => x * 10)
+const map2 = array.map((x, y) => x * y)
+// here, x will represent the value of the array and y will represent the index
+// for example 2 * 0, 4 * 1, 5 * 2, 1 * 3, 2 * 4 so on......
+console.log(map);
+console.log(map2);
+
+// filter
+const filter = array.filter(x => x > 4)
+const filter2 = array.filter((x, y) => x > 4 && y > 4)
+// here, x will represent the value of the array and y will represent the index
+console.log(filter)
+console.log('filter2:',filter2)
+
+// reduce
+const reduce = array.reduce((acc, val) => acc + val, 0)
+console.log(reduce)
+
+
+// constructor function
+function User(name, age, job) {
+    this.name = name,
+    this.age = age,
+    this.job = job
+}
+
+const user1 = new User('Jon Doe', 25, 'Developer');
+const user2 = new User('Katy Holmes', 22, 'Developer')
+user2.job = 'Designer';
+console.log(user1)
+console.log(user2)
+
+
+console.log('**********************');
+// call apply bind
+const alien1 = {
+    name: 'Jack sparrow',
+    age: 35
+}
+const alien2 = {
+    name: 'Emily blunt',
+    age: 30
+}
+
+function alienName (a, b, c) {
+    console.log(this.name)
+    console.log(this.age)
+    console.log(a, b, c)
+}
+
+alienName.call(alien1, 3, 4, 5)
+alienName.apply(alien2, [3, 6, 7])
+const alienDatas = alienName.bind(alien1);
+alienDatas(1, 6, 8)
