@@ -155,8 +155,17 @@ for (const key in person) {
 
 const array = [2, 4, 5, 1, 6, 9, 8]
 
+// map
 const map = array.map(x => x * 2)
 const map2 = array.map((x, y) => x * y)
 // here, x will represent the value of the array and y will represent the index
 // for example 2 * 0, 4 * 1, 5 * 2, 1 * 3, 2 * 4 so on......
 console.log(map);
+console.log(map2);
+
+// filter
+const filter = array.filter(x => x > 4)
+const filter2 = array.filter((x, y) => x > 4 && y > 4)
+// here, x will represent the value of the array and y will represent the index
+console.log(filter)
+console.log('filter2:',filter2)
