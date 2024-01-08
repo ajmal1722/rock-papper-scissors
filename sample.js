@@ -170,6 +170,10 @@ const filter2 = array.filter((x, y) => x > 4 && y > 4)
 console.log(filter)
 console.log('filter2:',filter2)
 
+// reduce
+const reduce = array.reduce((acc, val) => acc + val, 0)
+console.log(reduce)
+
 
 // constructor function
 function User(name, age, job) {
