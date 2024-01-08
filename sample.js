@@ -152,3 +152,11 @@ for (const key in person) {
 // let b = 4
 // b = !b;
 // console.log(b)
+
+const array = [2, 4, 5, 1, 6, 9, 8]
+
+const map = array.map(x => x * 2)
+const map2 = array.map((x, y) => x * y)
+// here, x will represent the value of the array and y will represent the index
+// for example 2 * 0, 4 * 1, 5 * 2, 1 * 3, 2 * 4 so on......
+console.log(map);
