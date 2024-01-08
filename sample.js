@@ -155,8 +155,11 @@ for (const key in person) {
 
 const array = [2, 4, 5, 1, 6, 9, 8]
 
+// forEach
+array.forEach(x => x * 10)
+
 // map
-const map = array.map(x => x * 2)
+const map = array.map(x => x * 10)
 const map2 = array.map((x, y) => x * y)
 // here, x will represent the value of the array and y will represent the index
 // for example 2 * 0, 4 * 1, 5 * 2, 1 * 3, 2 * 4 so on......
@@ -187,3 +190,26 @@ const user2 = new User('Katy Holmes', 22, 'Developer')
 user2.job = 'Designer';
 console.log(user1)
 console.log(user2)
+
+
+console.log('**********************');
+// call apply bind
+const alien1 = {
+    name: 'Jack sparrow',
+    age: 35
+}
+const alien2 = {
+    name: 'Emily blunt',
+    age: 30
+}
+
+function alienName (a, b, c) {
+    console.log(this.name)
+    console.log(this.age)
+    console.log(a, b, c)
+}
+
+alienName.call(alien1, 3, 4, 5)
+alienName.apply(alien2, [3, 6, 7])
+const alienDatas = alienName.bind(alien1);
+alienDatas(1, 6, 8)
