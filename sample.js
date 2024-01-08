@@ -169,3 +169,17 @@ const filter2 = array.filter((x, y) => x > 4 && y > 4)
 // here, x will represent the value of the array and y will represent the index
 console.log(filter)
 console.log('filter2:',filter2)
+
+
+// constructor function
+function User(name, age, job) {
+    this.name = name,
+    this.age = age,
+    this.job = job
+}
+
+const user1 = new User('Jon Doe', 25, 'Developer');
+const user2 = new User('Katy Holmes', 22, 'Developer')
+user2.job = 'Designer';
+console.log(user1)
+console.log(user2)
