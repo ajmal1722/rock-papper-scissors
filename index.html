@@ -99,36 +99,36 @@
                 if (randomNumber >= 0 && randomNumber < 1/3){
                     computerMove ='rock';
                 }else if (randomNumber >= 1/3 && randomNumber < 2/3){
-                    computerMove = 'Paper';
+                    computerMove = 'paper';
                 }else{
-                    computerMove = 'Scissors';
+                    computerMove = 'scissors';
                 }
                 
                 let result;
                 if (playerMove === 'rock'){
                     if (computerMove === 'rock'){
                         result = 'tie';
-                    }else if (computerMove === 'Paper'){
+                    }else if (computerMove === 'paper'){
                         result = 'you lose.'
-                    }else if (computerMove === 'Scissors'){
+                    }else if (computerMove === 'scissors'){
                         result = 'you won.'
                     }  
 
-                }else if (playerMove === 'Paper') {
+                }else if (playerMove === 'paper') {
                     if (computerMove === 'rock'){
                         result = 'you won.';
-                    }else if (computerMove === 'Paper'){
+                    }else if (computerMove === 'paper'){
                         result = 'tie'
-                    }else if (computerMove === 'Scissors'){
+                    }else if (computerMove === 'scissors'){
                         result = 'you lose.'
                     } 
                     
                 }else{
                     if (computerMove === 'rock'){
                         result = 'you lose.';
-                    }else if (computerMove === 'Paper'){
+                    }else if (computerMove === 'paper'){
                         result = 'you won.'
-                    }else if (computerMove === 'Scissors'){
+                    }else if (computerMove === 'scissors'){
                         result = 'tie'
                     } 
                 }
