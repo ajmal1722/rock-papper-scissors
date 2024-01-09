@@ -3,87 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Tutorials</title>
+    <title>Rock Paper Scissors</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background: rgb(25, 25, 25);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .title{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .move-button{
+            background-color: transparent;
+            border: 3px solid white;
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        img{
+            height: 50px;
+        }
+        .js-move{
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+        .js-scoreUpdates{
+            margin-top: 60px;
+        }
+        .reset-score{
+           background-color: white;
+           border: none;
+           font-size: 15px; 
+           padding: 8px 15px;
+           cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container mt-5">
+        <p class="title" >Rock Paper Scissors</p>
 
-    <!-- <p id="demo">changing content</p>
-    
-    <button class="btn btn-primary" onclick='document.getElementById("demo").innerHTML="hello javascript"'>click here</button>
+    <button class="move-button" onclick="playGame('rock')">
+        <img src="images/rock-emoji.png" alt="">
+     </button>
+        
+    <button class="move-button" onclick="playGame('Paper')">
+        <img src="images/paper-emoji.png" alt="">
+    </button>
 
-    <p id="font-size">font size</p>
-    <button type="button" onclick='document.getElementById("font-size").style.fontSize="35px"'>click here</button> -->
+    <button class="move-button" onclick="playGame('Scissors')">
+        <img src="images/scissors-emoji.png" alt="">
+    </button>
 
-    <!-- <p id="Birthday">Happy Birthday</p>
-    <button class="btn btn-primary" onclick="getElementById('Birthday').window.alert('you are beautiful)">click here</button> -->
+    <p class="js-move"></p>
+    <p class="js-result"></p>
+    <p class="js-scoreUpdates"></p>
 
-    <!-- <p id="sample"></p>
+    <button class="reset-score mt-4" onclick="
+         score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        updateScore();
+    " >Reset Scores</button>
+    </div>
+
     
     <script>
 
-        document.getElementById("sample").innerHTML = 'Muhammed Ajmal';
+         const score = {
+            wins : 0,
+            losses : 0,
+            ties : 0
+        };
 
-    </script>
-
-    <p id="opr"></p>
-    <script>
-        var x;
-        x=5;
-        document.getElementById('opr').innerHTML = x*10;
-    </script> -->
-
-    <button onclick="show();">click here</button>
-
-    <script>
-        function show(){
-            console.log('button clicked')
-            var a=10
-            var b=5
-            sum=a+b
-            console.log("sum="+sum)
-            // if statment
-            const e=10;
-            if (e%2==0){
-                console.log("e is even");
-            }else{
-                console.log("e is odd")
-            }
-
-            // for loop
-            for (var i = 0;i<5 ; i++){
-                console.log(i);
-            }
-            
-            // array
-            var arr = ["apple","mango",34,"orange"]
-            console.log(arr)
-            console.log(arr[1])
-
-            //object
-            var person={
-                name : "Muhammed Ajmal",
-                age : 22,
-                gender : "male"
-            }
-            console.log(person);
-            console.log(person.name)
-            console.log("gender : " + person.gender)
-
-            
+        function updateScore(){
+            document.querySelector('.js-scoreUpdates').innerHTML = 
+        `wins : ${score.wins}, Losses : ${score.losses}, Ties : ${score.ties}`
         }
-    </script>
 
+        updateScore();
 
+        function playGame(playerMove){
+            const computerMove = pickComputerMove(); 
 
+            
+            function pickComputerMove(){
+                let randomNumber = Math.random();
+                let computerMove = '';
+                if (randomNumber >= 0 && randomNumber < 1/3){
+                    computerMove ='rock';
+                }else if (randomNumber >= 1/3 && randomNumber < 2/3){
+                    computerMove = 'Paper';
+                }else{
+                    computerMove = 'Scissors';
+                }
+                
+                let result;
+                if (playerMove === 'rock'){
+                    if (computerMove === 'rock'){
+                        result = 'tie';
+                    }else if (computerMove === 'Paper'){
+                        result = 'you lose.'
+                    }else if (computerMove === 'Scissors'){
+                        result = 'you won.'
+                    }  
 
+                }else if (playerMove === 'Paper') {
+                    if (computerMove === 'rock'){
+                        result = 'you won.';
+                    }else if (computerMove === 'Paper'){
+                        result = 'tie'
+                    }else if (computerMove === 'Scissors'){
+                        result = 'you lose.'
+                    } 
+                    
+                }else{
+                    if (computerMove === 'rock'){
+                        result = 'you lose.';
+                    }else if (computerMove === 'Paper'){
+                        result = 'you won.'
+                    }else if (computerMove === 'Scissors'){
+                        result = 'tie'
+                    } 
+                }
 
-    
+                if (result === 'you won.'){
+                    score.wins = score.wins + 1;  // or you can siply write 
+                                                 // score.wins += 1;
+                }else if (result === 'you lose.') {
+                    score.losses += 1;
+                }else {
+                    score.ties += 1;
+                }
 
+                updateScore();
 
-    <script src="sample.js"></script>
-    
+                document.querySelector('.js-move').innerHTML = `${result} !`
+                document.querySelector('.js-result').innerHTML = 
+                `you <img src="images/${playerMove}-emoji.png" alt=""> - <img src="images/${computerMove}-emoji.png" alt=""> Computer `
+
+//                 alert(`you picked ${playerMove}. computer picked ${computerMove}. ${result}
+// wins : ${score.wins}, Losses : ${score.losses}, Ties : ${score.ties}`);
+            
+            return computerMove;
+            }
+        }
+        
+    </script>    
 </body>
 </html>
