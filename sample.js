@@ -228,3 +228,9 @@ const promise = new Promise((resolve, reject) => {
 })
 promise.then(result => console.log(result))
     .catch(error => console.log(error))
+
+
+// Destructuring
+const arr = [4, 5, 2, 6, 1, 7]
+let [x,y,,...z] = arr;
+console.log('Destructured values: ',x, y, z)
