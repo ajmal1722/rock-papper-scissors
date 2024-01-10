@@ -83,18 +83,20 @@
 // console.log(2+4+4+'5'+3)
 // console.log(('2'+'4'*4));
 
-const express = require('express');
-const ajmal = express();
-const fs = require('fs')
+// const { rejects } = require('assert');
+// // const express = require('express');
+// const ajmal = express();
+// const fs = require('fs');
+// const { resolve } = require('path');
 
-const html = fs.readFileSync('index.html', 'utf-8')
+// const html = fs.readFileSync('index.html', 'utf-8')
 
-const PORT = 8000;
+// const PORT = 8000;
 
-ajmal.get('/', (req, res) => {
-    res.send(html)
-})
-ajmal.listen(PORT)
+// ajmal.get('/', (req, res) => {
+//     res.send(html)
+// })
+// ajmal.listen(PORT)
 
 
 // const http = require('http');
@@ -213,3 +215,16 @@ alienName.call(alien1, 3, 4, 5)
 alienName.apply(alien2, [3, 6, 7])
 const alienDatas = alienName.bind(alien1);
 alienDatas(1, 6, 8)
+
+
+// promises 
+const a = 5;
+const promise = new Promise((resolve, reject) => {
+    if (a === 1) {
+        resolve(a)
+    } else {
+        reject('value is not 1')
+    }
+})
+promise.then(result => console.log(result))
+    .catch(error => console.log(error))
