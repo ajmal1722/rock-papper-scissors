@@ -234,3 +234,14 @@ promise.then(result => console.log(result))
 const arr = [4, 5, 2, 6, 1, 7]
 let [x,y,,...z] = arr;
 console.log('Destructured values: ',x, y, z)
+
+
+// closure
+function closure(){
+    const val = 10;
+    return function y (){
+        console.log('closure:', val)
+    }
+}
+let fun = closure()
+fun()
