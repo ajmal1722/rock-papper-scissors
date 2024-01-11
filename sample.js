@@ -306,3 +306,23 @@ async function as() {
     console.log(result)
 }
 as()
+
+// try and catch
+// try {
+//     console.log(hello)
+// } catch (error) {
+//     console.log('Error message:', error)
+// }
+
+// Destructuring
+const obj = {
+    name: 'ajmal',
+    age : 22
+}
+
+const ar = [3, 4, 6, 7]
+const [m,n,...o] = ar
+console.log(m, n, o);
+
+const {name,age} = obj;
+console.log(name, age)
