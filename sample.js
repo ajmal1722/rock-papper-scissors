@@ -291,3 +291,18 @@ function str(s){
 }
 
 console.log(str('fahiz'));
+
+// async await
+async function resolveAfter(){
+   return new Promise((resolve) => {
+    setTimeout(() => {
+        resolve('resolveed')
+    }, 2000)
+   })
+}
+async function as() {
+    console.log('start');
+    const result = await resolveAfter()
+    console.log(result)
+}
+as()
