@@ -257,3 +257,34 @@ console.log(generator.next())
 console.log(generator.next())
 console.log(generator.next())
 console.log(generator.next())
+
+
+// slice
+const slicedArray = array.slice(2, 4);
+console.log('array:',array)
+console.log('sliced array:', slicedArray)
+
+// splice
+// const splicedArray1 = 
+
+
+// Recursion
+function fac(n){
+    if(n===1){
+        return 1
+    }else{
+        return n*fac(n-1)
+    }
+}
+
+console.log(fac(5));
+
+function str(s){
+    if(s===''){
+        return ''
+    }else{
+        return str(s.substr(1))+s.charAt(0)
+    }
+}
+
+console.log(str('fahiz'));
