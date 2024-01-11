@@ -265,8 +265,11 @@ console.log('array:',array)
 console.log('sliced array:', slicedArray)
 
 // splice
-// const splicedArray1 = 
-
+const splicedArray1 = ['apple', 'banana', 'orange']
+splicedArray1.splice(1,2,'jon', 'jack','rose') // first para will represent the index, 2nd will 
+                            // represent the count you want to remove and after that you can add  
+                            // all the values you want to add in that array
+console.log('spliced array 1:', splicedArray1);
 
 // Recursion
 function fac(n){
